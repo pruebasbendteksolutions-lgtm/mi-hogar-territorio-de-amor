@@ -15,7 +15,7 @@ const hash = window.location.hash;
 
 if (
   path.endsWith("/dashboard") ||
-  hash === "#/dashboard"
+  hash.includes("dashboard")
 ) {
   return "dashboard";
 }
