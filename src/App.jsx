@@ -10,15 +10,15 @@ import Dashboard from "./pages/Dashboard";
 import { saveSurvey } from "./firebase/saveSurvey";
 
 function App() {
-  const [screen, setScreen] = useState(() => {
-    const path = window.location.pathname;
+ const path = window.location.pathname;
+const hash = window.location.hash;
 
-    if (path.endsWith("/dashboard")) {
-      return "dashboard";
-    }
-
-    return "home";
-  });
+if (
+  path.endsWith("/dashboard") ||
+  hash === "#/dashboard"
+) {
+  return "dashboard";
+}
 
   const [saving, setSaving] = useState(false);
 
