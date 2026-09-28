@@ -10,15 +10,19 @@ import Dashboard from "./pages/Dashboard";
 import { saveSurvey } from "./firebase/saveSurvey";
 
 function App() {
- const path = window.location.pathname;
-const hash = window.location.hash;
+  const [screen, setScreen] = useState(() => {
+    const path = window.location.pathname;
+    const hash = window.location.hash;
 
-if (
-  path.endsWith("/dashboard") ||
-  hash.includes("dashboard")
-) {
-  return "dashboard";
-}
+    if (
+      path.endsWith("/dashboard") ||
+      hash.includes("dashboard")
+    ) {
+      return "dashboard";
+    }
+
+    return "home";
+  });
 
   const [saving, setSaving] = useState(false);
 
@@ -133,20 +137,9 @@ if (
     setScreen("home");
   };
 
-  /*
-   * DASHBOARD
-   *
-   * Si la URL termina en /dashboard,
-   * mostramos directamente el Dashboard.
-   */
-
   if (screen === "dashboard") {
     return <Dashboard />;
   }
-
-  /*
-   * ENCUESTA
-   */
 
   if (screen === "survey") {
     return (
@@ -159,17 +152,9 @@ if (
     );
   }
 
-  /*
-   * AGRADECIMIENTO
-   */
-
   if (screen === "thanks") {
     return <Thanks onRestart={handleRestart} />;
   }
-
-  /*
-   * PARTICIPANTE
-   */
 
   if (screen === "participant") {
     return (
@@ -180,10 +165,6 @@ if (
     );
   }
 
-  /*
-   * INSTRUCCIONES
-   */
-
   if (screen === "instructions") {
     return (
       <Instructions
@@ -192,10 +173,6 @@ if (
       />
     );
   }
-
-  /*
-   * HOME
-   */
 
   return <Home onStart={handleStart} />;
 }
