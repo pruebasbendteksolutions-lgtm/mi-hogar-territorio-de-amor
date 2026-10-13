@@ -1,10 +1,8 @@
-function Home({ onStart }) {
+function Home({ onStart, onStartParents }) {
   return (
     <main className="home">
       <section className="hero">
-
         <div className="hero-content">
-
           <div className="logo-placeholder">
             🏠
           </div>
@@ -30,19 +28,29 @@ function Home({ onStart }) {
             Familia · Proyecto de vida · Bienestar emocional
           </p>
 
-          <button
-            type="button"
-            className="hero-button"
-            onClick={onStart}
-          >
-            <span>Comenzar</span>
-            <span>→</span>
-          </button>
+          <div className="home-options">
+            <button
+              type="button"
+              className="hero-button"
+              onClick={onStart}
+            >
+              <span>Encuesta de estudiantes</span>
+              <span>→</span>
+            </button>
+
+            <button
+              type="button"
+              className="hero-button"
+              onClick={onStartParents}
+            >
+              <span>Encuesta de padres/acudientes</span>
+              <span>→</span>
+            </button>
+          </div>
 
           <p className="hero-footer">
             Instrumento de caracterización y orientación
           </p>
-
         </div>
 
         <div className="hero-decoration hero-decoration-one">
@@ -52,7 +60,6 @@ function Home({ onStart }) {
         <div className="hero-decoration hero-decoration-two">
           ✦
         </div>
-
       </section>
     </main>
   );

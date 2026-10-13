@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Credenciales privadas
+serviceAccountKey.json
+service-account*.json
