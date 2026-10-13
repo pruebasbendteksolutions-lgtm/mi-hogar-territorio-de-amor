@@ -99,7 +99,7 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
+button:disabled {   
   cursor: not-allowed;
 }
 
@@ -295,11 +295,11 @@ button:disabled {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 4px;
 
-  padding: 16px 24px;
+  padding: 8px 16px;
 
-  border-radius: 15px;
+  border-radius: 25px;
 
   background: var(--dark);
   color: var(--white);
@@ -314,6 +314,15 @@ button:disabled {
     background 0.2s ease;
 }
 
+.home-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
 .hero-button span:last-child {
   font-size: 20px;
 
